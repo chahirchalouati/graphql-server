@@ -1,0 +1,12 @@
+spring:
+  neo4j:
+    uri: bolt://localhost:7687
+  graphql:
+    graphiql:
+      enabled: true
+logging:
+  level:
+    com:
+      crcl:
+        graphqlserver:
+          services: debug

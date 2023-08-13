@@ -1,1 +1,13 @@
+version: "3.2"
 services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: on-failure
+    networks:
+      - l_net
+
+
+networks:
+  l_net:
