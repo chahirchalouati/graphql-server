@@ -1,0 +1,51 @@
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    birthDate: String   # You might need to map LocalDate to a String or custom scalar
+    firstName: String!
+    lastName: String!
+    isActive: Boolean!
+    address: String
+    phoneNumber: String
+    occupation: String
+    education: Education
+    hobbies: [String]
+}
+
+type Education {
+    degree: String
+    university: String
+    graduationYear: Int
+}
+
+type Query {
+    findById(id: ID!): User
+    users: [User]
+}
+
+type Mutation {
+    createUser(mutateUserRequest: MutateUserRequest!): User
+    updateUser(id: ID!, mutateUserRequest: MutateUserRequest!): User
+    deleteUser(id: ID!): ID
+}
+
+input MutateUserRequest {
+    username: String!
+    email: String!
+    birthDate: String
+    firstName: String!
+    lastName: String!
+    isActive: Boolean
+    address: String
+    phoneNumber: String
+    occupation: String
+    education: EducationRequest
+    hobbies: [String]
+}
+
+input EducationRequest {
+    degree: String
+    university: String
+    graduationYear: Int
+}
