@@ -43,7 +43,7 @@ public class UserController {
     }
 
     @MutationMapping(value = "deleteUser")
-    public String create(@Argument(value = "id") String id) {
+    public String delete(@Argument(value = "id") String id) {
         userService.delete(id);
         return id;
     }
