@@ -1,2 +1,4 @@
-schema: schema.graphqls
+schema:
+  - users.graphqls
+  - roles.graphqls
 documents: '**/*.graphql'
